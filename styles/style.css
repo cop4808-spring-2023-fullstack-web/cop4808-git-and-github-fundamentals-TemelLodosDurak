@@ -53,6 +53,14 @@ button {
     grid-column: span 2;
 }
 
+.top_buttons {
+    background-color: #e6ff04;
+}
+
+.top_buttons:active {
+    background-color: #adc03e;
+}
+
 .operator {
     background-color: #FF8F1F;    
 }
