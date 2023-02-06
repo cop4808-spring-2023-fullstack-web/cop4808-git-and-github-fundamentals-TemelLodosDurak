@@ -55,14 +55,16 @@ button {
 
 .top_buttons {
     background-color: #e6ff04;
+    font-weight: bold  
 }
 
 .top_buttons:active {
     background-color: #adc03e;
+    font-weight: bold  
 }
 
 .operator {
-    background-color: #FF8F1F;    
+    background-color: #FF8F1F;  
 }
 
 .operator:focus {
