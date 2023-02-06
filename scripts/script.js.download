@@ -41,9 +41,22 @@ function clickButton() {
             } else if(buttons[i].classList.contains('sign')) {
                 inputSign(displayValue);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('clear'))
+            } else if(buttons[i].classList.contains('clear')){
                 clearDisplay();
                 updateDisplay();
+            }
+              else if(buttons[i].classList.contains('top_buttons')) {
+                if(buttons[i].value === '3.141592' || buttons[i].value === '2.718281'){
+                    inputOperand(buttons[i].value);
+                    updateDisplay();
+                } else if(buttons[i].value === 'sqrt') {
+                    sqrtOperator(displayValue);
+                    updateDisplay();
+                } else if(buttons[i].value === 'ln') {
+                    lnOperator(displayValue);
+                    updateDisplay();
+                }
+            }
         }
     )}
 }
@@ -145,6 +158,14 @@ function inputPercent(num) {
 
 function inputSign(num) {
     displayValue = (num * -1).toString();
+}
+
+function sqrtOperator(num) {
+   displayValue = roundAccurately(Math.sqrt(num), 15).toString();
+}
+
+function lnOperator(num) {
+    displayValue = roundAccurately(Math.log(num), 15).toString();
 }
 
 function clearDisplay() {
