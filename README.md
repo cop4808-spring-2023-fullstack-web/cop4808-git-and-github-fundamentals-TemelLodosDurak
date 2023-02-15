@@ -1,8 +1,9 @@
 **Name: Temel Lodos Durak**
 
-**Z-Number: Z2367216**
+**Z-Number: Z23672116**
 
 ---
+
 # Updated Calculator
 
 Added sqrt, ln, pi, and e buttons with custom css and functionalities.
