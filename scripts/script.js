@@ -4,6 +4,7 @@ let secondOperand = null;
 let firstOperator = null;
 let secondOperator = null;
 let result = null;
+let flagOperand = false;  //boolean flag to check whether to replace display value or not
 const buttons = document.querySelectorAll('button');
 
 window.addEventListener('keydown', function(e){
@@ -76,9 +77,10 @@ function inputOperand(operand) {
         }
     } else {
         //3rd/5th click - inputs to secondOperand
-        if(displayValue === firstOperand) {
-            displayValue = operand;
-        } else {
+        if(flagOperand) {  //We check whether  flag is true or not, which will indicate whether to replace existing display
+            displayValue = operand;     //or add on to it.
+            flagOperand = false;        //We set the flag back to false after our first display replacement
+        } else {                        //This flag will remain false until a new operator has been inputed.
             displayValue += operand;
         }
     }
@@ -106,7 +108,10 @@ function inputOperator(operator) {
         firstOperator = operator;
         firstOperand = displayValue;
     }
-}
+    flagOperand = true;  //After operator has been set, we set the flag to true
+}                        //Which will allow us to replace the display value only once
+                         //after we start inputing our second operand we will turn this
+                         //back to false inside input operand.
 
 function inputEquals() {
     //hitting equals doesn't display undefined before operate()
